@@ -9,6 +9,7 @@ var urlMap = [
 	{path: "/digest", action: lab1_1},
 	{path: "/example_1", action: example_1},
 	{path: "/lab02/info", action: lab02.info},
+	{path: "/static/custom.css", action: __dirname + "/static/custom.css"}, // TODO any file wildcard
 	];
 
 var service = require("./lib/service").http(urlMap);
