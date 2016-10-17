@@ -23,6 +23,42 @@ var infoTask = function(request, next){
 	});
 };
 
+var launchTask = function(request, next){
+	var runParams = {
+		ImageId: 'ami-89738fe9',
+		MinCount: 1,
+		MaxCount: 1,
+		KeyName: 'piomar123key01',
+		InstanceType: 't1.micro',
+		Monitoring: {Enabled: false}
+	};
+	var output = {};
+	ec2.runInstances(runParams, function(err, runData){
+		if (err) {
+			console.log(err, err.stack);
+			throw err;
+		}
+		console.log(runData);
+		output.run = runData;
+		ec2.createTags({
+			Resources: [runData.Instances[0].InstanceId],
+			Tags: [{
+				Key: 'Name',
+				Value: 'piotr.marcinczyk.sdk'
+			}],
+		}, function(err, tagsData){
+			if (err) {
+				console.log(err, err.stack);
+				throw err;
+			}
+			output.tags = tagsData;
+			console.log(tagsData);
+			next(null, output);
+		});
+	});
+}
+
 exports.lab = {
 	info: infoTask,
+	launch: launchTask
 };

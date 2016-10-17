@@ -9,6 +9,7 @@ var urlMap = [
 	{path: "/digest", action: lab1_1},
 	{path: "/example_1", action: example_1},
 	{path: "/lab02/info", action: lab02.info},
+	{path: "/lab02/launch", action: lab02.launch},
 	{path: "/static/custom.css", action: __dirname + "/static/custom.css"}, // TODO any file wildcard
 	];
 
