@@ -11,6 +11,7 @@ var urlMap = [
 	{path: "/lab02/info", action: lab02.info},
 	{path: "/lab02/launch", action: lab02.launch},
 	{path: "/static/custom.css", action: __dirname + "/static/custom.css"}, // TODO any file wildcard
+	{path: "/asg/desired", action: lab02.desired},
 	];
 
 var service = require("./lib/service").http(urlMap);
