@@ -10,6 +10,7 @@
 		<!--title>PSOiR Amazon Web Services Manager</title-->
 	</head>
 	<body>
+	<div id="wrap">
 		<nav class="navbar">
 			<div class="container">
 			<div class="navbar-header">
@@ -34,9 +35,7 @@
 		<div class="col-md-8 col-md-offset-2">
 		<section id="section1" class="panel panel-default">
 			<div class="panel-heading">
-			<div class="container">
 				<h3 class="panel-title">Enter an arbitrary text and choose hash algorithms to calculate digests</h3>
-			</div>
 			</div>
 			<div class="panel-body">
 				<form action="/digest" method="post" id="sign-up-form" class="form-horizontal">
@@ -67,7 +66,7 @@
 					  	</div>
 					  	<div class="number">
 						    <label>
-						      Loop count: <input type="number" name="loop"> 
+						      Loop count: <input type="number" name="loop">
 						    </label>
 					  	</div>
 						</div>
@@ -80,18 +79,18 @@
 				</form>
 	  		</div>
 			<footer class="panel-footer">
-
 			</footer>
 		</section>
 		</div>
+		</div>
 	</div>
-		<footer class="navbar">
-			<p class="text-center custom-footer-margin">
-				Piotr Marcińczyk @ 2016
-			</p>
-			<p class="text-muted text-center">
-				<a href="https://www.p.lodz.pl/" class="text-muted">Lodz University of Technology</a>
-			</p>
-		</footer>
+	<footer id="page-footer" class="navbar">
+		<p class="text-center custom-footer-margin">
+			Piotr Marcińczyk @ 2016
+		</p>
+		<p class="text-muted text-center">
+			<a href="https://www.p.lodz.pl/" class="text-muted">Lodz University of Technology</a>
+		</p>
+	</footer>
 	</body>
 </html>
