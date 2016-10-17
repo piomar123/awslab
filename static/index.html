@@ -38,11 +38,11 @@
 				<h3 class="panel-title">Auto Scaling Group</h3>
 			</div>
 			<div class="panel-body">
-			<form action="/asg/desired" method="get" class="form-inline">
-				<div class="control-group">
-					<label for="capacity" class="control-label">Set desired capacity: </label>
-					<input type="number" name="capacity" id="capacity" value="2" class="form-control"/>
-					<input type="submit" class="btn btn-md btn-danger" value="Fire!"/>
+			<form action="/asg/desired" method="get" class="form-horizontal">
+				<div class="form-group">
+					<label for="capacity" class="control-label col-sm-4 col-lg-3">Set desired capacity: </label>
+					<div class="col-sm-2"><input type="number" name="capacity" id="capacity" value="2" class="form-control"/></div>
+					<div class="col-sm-2"><input type="submit" class="btn btn-md btn-danger btn-block" value="Fire!"/></div>
 				</div>
 			</form>
 			</div>
@@ -54,9 +54,9 @@
 			</div>
 			<div class="panel-body">
 				<form action="/digest" method="post" id="sign-up-form" class="form-horizontal">
-						<div class="control-group">
-							<textarea type="text" class="form-control" placeholder="enter text here" name="txt" rows="3"> </textarea>
-						</div>
+					<div class="control-group">
+						<textarea type="text" class="form-control" placeholder="enter text here" name="txt" rows="3"> </textarea>
+					</div>
 					<div class="row">
 						<div class="col-md-12">
 						<div class="checkbox-inline">
@@ -79,9 +79,9 @@
 						      <input type="checkbox" name="alg[sha512]" checked> SHA512
 						    </label>
 					  	</div>
-					  	<div class="number">
+					  	<div class="control-group form-inline">
 						    <label>
-						      Loop count: <input type="number" name="loop">
+						      Loop count: <input type="number" name="loop" class="form-control">
 						    </label>
 					  	</div>
 						</div>

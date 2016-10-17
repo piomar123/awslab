@@ -62,13 +62,13 @@ var launchTask = function(request, next){
 var desiredTask = function(request, next){
 	var desiredParams = {
 		AutoScalingGroupName: "MarcinczykASG",
-		DesiredCapacity: request.capacity,
+		DesiredCapacity: request.query.capacity,
 		HonorCooldown: true
 	};
 	autoscaling.setDesiredCapacity(desiredParams, function(err, data) {
 		if (err) {
 			console.log(err, err.stack);
-			throw err;
+			return next(err);
 		}
 		console.log(data);
 		next(null, data);
