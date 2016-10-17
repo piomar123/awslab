@@ -17,7 +17,7 @@ var infoTask = function(request, next){
 	ec2.describeInstances(params, function(err, data) {
 		if (err) {
 			console.log(err, err.stack);
-			throw err;
+			return next(err);
 		}
 		console.log(data);
 		next(null, data);
@@ -37,7 +37,7 @@ var launchTask = function(request, next){
 	ec2.runInstances(runParams, function(err, runData){
 		if (err) {
 			console.log(err, err.stack);
-			throw err;
+			return next(err);
 		}
 		console.log(runData);
 		output.run = runData;
@@ -50,7 +50,7 @@ var launchTask = function(request, next){
 		}, function(err, tagsData){
 			if (err) {
 				console.log(err, err.stack);
-				throw err;
+				return next(err);
 			}
 			output.tags = tagsData;
 			console.log(tagsData);
